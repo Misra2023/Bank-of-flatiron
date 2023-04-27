@@ -15,7 +15,10 @@ function AddTransactionForm() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(transaction),
-    }).then(() => {});
+    }).then(() => {
+      window.location.reload()
+
+    });
   };
   return (
     <div className="ui segment">
@@ -50,7 +53,6 @@ function AddTransactionForm() {
             onChange={(e) => setAmount(e.target.value)}
           />
         </div>
-        <a className="home" href="/home" type=""> HOME</a>
         <button href= "/home" className="ui button" type="submit">
           Add Transaction
         </button>
